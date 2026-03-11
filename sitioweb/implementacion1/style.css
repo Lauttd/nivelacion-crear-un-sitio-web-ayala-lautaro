@@ -1,0 +1,41 @@
+/* Estado Base (Blanco - Negro) */
+body {
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estado: Negro - Blanco */
+body.tema-oscuro {
+    background-color: black;
+    color: white;
+}
+
+/* Estado: Celeste - Rojo */
+body.tema-celeste {
+    background-color: lightblue;
+    color: red;
+}
+
+.contenedor {
+    text-align: center;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    cursor: pointer;
+    background-color: #eee;
+}
