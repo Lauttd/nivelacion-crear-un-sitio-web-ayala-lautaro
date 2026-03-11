@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Implementación Python + Flask</title>
+    <style>
+        body { font-family: sans-serif; transition: 0.3s; padding: 50px; text-align: center; }
+        
+        /* Definición de los 3 estados */
+        .estado-0 { background-color: white; color: black; }
+        .estado-1 { background-color: black; color: white; }
+        .estado-2 { background-color: #87CEEB; color: red; } /* Celeste y Rojo */
+
+        input { padding: 10px; font-size: 16px; width: 300px; margin-bottom: 20px; }
+        button { padding: 10px 20px; cursor: pointer; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body class="estado-0">
+
+    <h1>Servidor Python (Flask)</h1>
+    
+    <input type="text" id="cajaTexto" placeholder="Escribe algo y pulsa Enter...">
+    
+    <button id="btnColor">Cambiar Colores</button>
+
+    <script>
+        const input = document.getElementById('cajaTexto');
+        const btn = document.getElementById('btnColor');
+        const body = document.body;
+        let estadoActual = 0;
+
+        // 1. Evento de la tecla Enter
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                alert("Texto ingresado: " + input.value);
+            }
+        });
+
+        // 2. Evento del botón para rotar colores (0, 1, 2)
+        btn.addEventListener('click', () => {
+            body.classList.remove(`estado-${estadoActual}`);
+            estadoActual = (estadoActual + 1) % 3; // Ciclo entre 0, 1 y 2
+            body.classList.add(`estado-${estadoActual}`);
+        });
+    </script>
+</body>
+</html>
